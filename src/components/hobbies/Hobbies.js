@@ -136,10 +136,10 @@ class Hobbies extends React.Component{
         /*header('Access-Control-Allow-Origin: *');
         header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
         header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');*/
-        //Axios.post('http://localhost:5000/data', {id: 'id here'})
+        //Axios.post('/data', {id: 'id here'})
 
 
-        /*fetch('http://192.168.0.133:3000/data', {
+        /*fetch('http://localhost:5000http://192.168.0.133:3000/data', {
             method: 'POST',
             //headers: {} <-- You can include some headers if you want
             headers: {
@@ -473,12 +473,18 @@ class Hobbies extends React.Component{
                              onClick={this.handleHobby} id="1"/>
                         <img className='sports' src={Sports} alt='sports'
                              onClick={this.handleHobby} id="2"/>
+
                         <img className='technology' src={Technology} alt='technology'
                              onClick={this.handleHobby} id="3"/>
+                        <span className='technology-text'>Technology</span>
+
                         <img className='health' src={Health} alt='health'
                              onClick={this.handleHobby} id="4"/>
+
                         <img className='outdoor' src={Outdoor} alt='outdoor'
                              onClick={this.handleHobby} id="5"/>
+                        <span className='outdoor-text'>Outdoor</span>
+
                         <img className='collection' src={Collection} alt='collection'
                              onClick={this.handleHobby} id="6"/>
                         <img className='indoor' src={Indoor} alt='indoor'
@@ -507,19 +513,25 @@ class Hobbies extends React.Component{
                         {this.state.is1Empty ? <div className='hobbies-input1'></div> :
                         <div className='hobbies-input1-green'>
 
+                            <span className='hobbies-text-1'>
                             <Get1Component state={this.state}/>
+                            </span>
                             {/*<p>{this.get1Component}</p>*/}
                         </div>}
                         {this.state.is2Empty ? <div className='hobbies-input2'></div> :
                             <div className='hobbies-input2-green'>
 
+                                <span className='hobbies-text-1'>
                                 <Get2Component state={this.state}/>
+                                </span>
                                 {/*<p>{this.get1Component}</p>*/}
                             </div>}
                         {this.state.is3Empty ? <div className='hobbies-input3'></div> :
                             <div className='hobbies-input3-green'>
 
+                                <span className='hobbies-text-1'>
                                 <Get3Component state={this.state}/>
+                                </span>
                                 {/*<p>{this.get1Component}</p>*/}
                             </div>}
 

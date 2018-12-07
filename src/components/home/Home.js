@@ -170,7 +170,7 @@ class Home extends React.Component{
 
         let dx = this.state;
         console.log(dx);
-        fetch('https://dittora.herokuapp.com/email', {
+        fetch('http://localhost:5000/email', {
             method: 'POST',
             //headers: {} <-- You can include some headers if you want  Hreretreeret
             headers: {
@@ -200,10 +200,10 @@ class Home extends React.Component{
         /*header('Access-Control-Allow-Origin: *');
         header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
         header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');*/
-        //Axios.post('http://localhost:5000/data', {id: 'id here'})
+        //Axios.post('/data', {id: 'id here'})
 
 
-        /*fetch('http://192.168.0.133:3000/data', {
+        /*fetch('http://localhost:5000http://192.168.0.133:3000/data', {
             method: 'POST',
             //headers: {} <-- You can include some headers if you want
             headers: {
@@ -358,12 +358,12 @@ class Home extends React.Component{
                             <input className='home-email-input' onChange={this.handleContactEmail}
                                    placeholder='Email Address'/>
 
-                            <div className='home-message-input'>
-                                <input className='home-message-inner-input' onChange={this.handleContactMessage}
+                            {/*<div className='home-message-input'>*/}
+                                <textarea className='home-message-input' onChange={this.handleContactMessage}
                                        placeholder='Type your message here..'>
-                                </input>
+                                </textarea>
 
-                            </div>
+                            {/*</div>*/}
 
 
                             <button className='home-button-2' onClick={this.handleSendEmail}>LET'S TALK!</button>

@@ -9,9 +9,11 @@ let login = (request, response) => {
     findAndUpdateUser(request, user.tokens, 'tokens')
         .then(user => {
             if (!user) {
+                console.log('user not found')
                 sendResponse(response, 404, 'User not found');
             }
             response.header('x-auth', token);
+            console.log('sending response')
             sendResponse(response, 200, {
                 _id: user._id,
                 token: token,

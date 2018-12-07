@@ -98,10 +98,10 @@ export default class Test extends React.Component{
         /*header('Access-Control-Allow-Origin: *');
         header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
         header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');*/
-        //Axios.post('http://localhost:5000/data', {id: 'id here'})
+        //Axios.post('/data', {id: 'id here'})
 
 
-        /*fetch('http://192.168.0.133:3000/data', {
+        /*fetch('http://localhost:5000http://192.168.0.133:3000/data', {
             method: 'POST',
             //headers: {} <-- You can include some headers if you want
             headers: {

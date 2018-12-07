@@ -561,7 +561,7 @@ border-radius: 3px;*/
   border: none;
   border-bottom: 1px solid grey;
 
-  color: #A1A1A1;
+  color: black;//#A1A1A1;
 }
 
 /* Last name */
@@ -581,7 +581,7 @@ border-radius: 3px;*/
   border: none;
   border-bottom: 1px solid grey;
 
-  color: #A1A1A1;
+  color: black;
 }
 
 
@@ -610,7 +610,7 @@ border-radius: 3px;*/
   border: none;
   border-bottom: 1px solid grey;
 
-  color: #A1A1A1;
+  color: black;
 }
 
 
@@ -633,7 +633,7 @@ border-radius: 3px;*/
   border: none;
   border-bottom: 1px solid grey;
 
-  color: #A1A1A1;
+  color: black;
 }
 
 
@@ -656,7 +656,7 @@ border-radius: 3px;*/
   border: none;
   border-bottom: 1px solid grey;
 
-  color: #A1A1A1;
+  color: black;
 }
 
 
@@ -679,8 +679,50 @@ border-radius: 3px;*/
   border: none;
   border-bottom: 1px solid grey;
 
-  color: #A1A1A1;
+  color: black;
 }
+
+
+
+.register-button {
+  /* Rectangle 2 */
+
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  left: 590px;
+  top: 360px;
+
+  background-color: white;
+  color: deeppink;
+  border: 1.5px solid deeppink;
+
+  border-radius: 4px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+
+  //color: #FFFFFF;
+}
+
+
+.register-button:hover {
+  background-color: deeppink;
+  color: white;
+}
+
+
+/* Group */
+.register-bottom-img {
+  position: absolute;
+  width: 1044px;
+  height: 273px;
+  left: 143px;
+  top: 413px;
+}
+
+
+
+
 
 
 /*
@@ -940,7 +982,7 @@ border: 1px solid #000000;
   border: none;
   border-bottom: 1px solid grey;
 
-  color: #A1A1A1;
+  color: black;//#A1A1A1;
 }
 
 
@@ -963,7 +1005,7 @@ border: 1px solid #000000;
   border: none;
   border-bottom: 1px solid grey;
 
-  color: #A1A1A1;
+  color: black;
 }
 
 
@@ -984,6 +1026,63 @@ border: 1px solid #000000;
 
   color: #000000;
 }
+
+/* Rectangle 2 */
+.login-button {
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  left: 590px;
+  top: 287px;
+
+  background-color: white;
+  color: deeppink;
+  border: 1.5px solid deeppink;
+
+  border-radius: 4px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+
+  //color: #FFFFFF;
+}
+
+
+.login-button:hover {
+  background-color: deeppink;
+  color: white;
+}
+
+
+
+
+/* Group */
+.login-bottom-img {
+  position: absolute;
+  width: 1079px;
+  height: 232px;
+  left: 100px;
+  top: 427px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Home Page CSS */

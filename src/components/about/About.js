@@ -78,13 +78,13 @@ class About extends React.Component{
         console.log(this.props);
 
         this.state = {
-            id: this.props.usersAbout[0].id,    //uuid(),
-            token: this.props.usersAbout[0].token,
-            firstName: this.props.usersAbout[0].firstName,
+            id: this.props.usersAbout[0].id, //1234,    //uuid(),
+            token: this.props.usersAbout[0].token, //'token',
+            firstName: this.props.usersAbout[0].firstName, //'Suyash',
             gender: 'gender',
             ethnicity: 'ethnicity',
             date: moment(),
-            city: 'city',
+            city: '',
             birthDate: '',
             today: new Date(),
 
@@ -262,7 +262,7 @@ class About extends React.Component{
         /*header('Access-Control-Allow-Origin: *');
         header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
         header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');*/
-        //Axios.post('http://localhost:5000/data', {id: 'id here'})
+        //Axios.post('/data', {id: 'id here'})
 
 
         fetch('http://localhost:5000/basicDetails', {
@@ -371,6 +371,7 @@ class About extends React.Component{
                     <br/>
                     <div className='birthday-date-picker'>
                         {this.state.isDateOn ? <InfiniteCalendar
+                            theme={{headerColor:'#ff1493', selectionColor:'#ff1493'}}
                             width={250}
                             height={200}
                             selected={this.state.today}
@@ -382,7 +383,7 @@ class About extends React.Component{
                     <span className='city'>
                         Where do you live?
                     </span>
-                    <input className='city-input' placeholder={this.state.city}
+                    <input value={this.state.city} className='city-input' placeholder="City"
                            onChange={this.handleCity} />
 
                     {/*<button className='about-button'>Next</button>*/}

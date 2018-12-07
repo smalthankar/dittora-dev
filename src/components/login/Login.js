@@ -34,6 +34,8 @@ import 'react-bootstrap/dist/react-bootstrap.min.js';
 import {DropdownButton, Button, MenuItem,ButtonToolbar} from 'react-bootstrap';
 import Axios from 'axios';
 
+import LoginBottomImg from '../../images-logos/login/login-bottom-img.svg'
+
 let id = '';
 
 
@@ -63,9 +65,9 @@ class Login extends React.Component{
         this.state = {
             //id:uuid(),
 
-            loginEmail: 'Email address',
+            loginEmail: '',
 
-            loginPassword: 'Password',
+            loginPassword: '',
         };
 
     }
@@ -145,7 +147,7 @@ class Login extends React.Component{
         let dx = this.state;
 
         console.log(dx);
-        fetch('http://localhost:5000/login', {  /*http://localhost:5000/login*/
+        fetch('http://localhost:5000/login', {  /*/login*/ //changed
             method: 'POST',
             //headers: {} <-- You can include some headers if you want
             headers: {
@@ -155,12 +157,15 @@ class Login extends React.Component{
             body: JSON.stringify(dx)
         })
             .then(res => {
+                console.log('response :'+res)
                 return res.json()
             }).then(
                 json => {console.log(json);
                 this.props.dispatch(addUser(json._id, {token: json.token, firstName: json.firstName}));
-                this.props.history.push(`/favSub/${json._id}`)}
-        )
+                this.props.history.push(`/about/${json._id}`)}
+        ).catch(error=>{
+            console.log(error)
+        })
 
     }
 
@@ -170,12 +175,12 @@ class Login extends React.Component{
         /*header('Access-Control-Allow-Origin: *');
         header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
         header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');*/
-        //Axios.post('http://localhost:5000/data', {id: 'id here'})
+        //Axios.post('/data', {id: 'id here'})
 
 
         //send it on /register
 
-        /*fetch('http://192.168.0.133:3000/login', {
+        /*fetch('http://localhost:5000http://192.168.0.133:3000/login', {
             method: 'POST',
             //headers: {} <-- You can include some headers if you want
             headers: {
@@ -234,12 +239,14 @@ class Login extends React.Component{
 
 
                         <div className='div__Button'>
-                            <input type="email" name="emailaddress" className='loginEmail-input' placeholder={this.state.loginEmail}
+                            <input value={this.state.loginEmail} type="email" name="emailaddress" className='loginEmail-input'
+                                   placeholder="Email address"
                             onChange={this.handleLoginEmail}/>
                         </div>
 
                         <div className='div__Button'>
-                            <input type="password" className='loginPassword-input' placeholder={this.state.loginPassword}
+                            <input value={this.state.loginPassword} type="password" className='loginPassword-input'
+                                   placeholder="Password"
                                    onChange={this.handleLoginPassword}/>
                         </div>
 
@@ -251,7 +258,9 @@ class Login extends React.Component{
 
                         <br/>
 
-                        <button className='home-button-down' onClick={this.handleLoginUser}>Sign In</button>
+                        <button className='login-button' onClick={this.handleLoginUser}>Sign In</button>
+
+                    <img className='login-bottom-img' src={LoginBottomImg} alt='login-bottom-img'/>
                     {/*</form>*/}
 
                 </div>

@@ -36,6 +36,10 @@ import 'react-bootstrap/dist/react-bootstrap.min.js';
 import {DropdownButton, Button, MenuItem,ButtonToolbar} from 'react-bootstrap';
 import Axios from 'axios';
 
+
+import RegisterBottom from '../../images-logos/register/register-bottom.svg'
+
+
 let id = '';
 
 
@@ -68,12 +72,12 @@ class Register extends React.Component{
 
         this.state = {
             //id:uuid(),
-            firstName: 'First name',
-            lastName: 'Last name',
-            email: 'Email address',
-            confirmEmail: 'Confirm email address',
-            password: 'Password',
-            confirmPassword: 'Confirm password',
+            firstName: '',
+            lastName: '',
+            email: '',
+            confirmEmail: '',
+            password: '',
+            confirmPassword: '',
 
             validated: false,
             consent: true
@@ -202,7 +206,7 @@ class Register extends React.Component{
 
         let dx = this.state;
 
-        fetch('http://localhost:5000/register', {  /*http://localhost:5000/register*/
+        fetch('http://localhost:5000/register', {  /*/register*/
             method: 'POST',
             //headers: {} <-- You can include some headers if you want
             headers: {
@@ -237,11 +241,11 @@ class Register extends React.Component{
         /*header('Access-Control-Allow-Origin: *');
         header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
         header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');*/
-        //Axios.post('http://localhost:5000/data', {id: 'id here'})
+        //Axios.post('/data', {id: 'id here'})
 
         //send it on /register
 
-        /*fetch('http://192.168.0.133:3000/register', {
+        /*fetch('http://localhost:5000http://192.168.0.133:3000/register', {
             method: 'POST',
             //headers: {} <-- You can include some headers if you want
             headers: {
@@ -304,32 +308,32 @@ class Register extends React.Component{
                        {/* <form className="form__Text" >*/}
 
                             <div className='div__Button'>
-                                <input className='first-name-input' placeholder={this.state.firstName}
+                                <input value={this.state.firstName} className='first-name-input' placeholder="First name"
                                 onChange={this.handleFirstName}/>
                             </div>
 
                             <div className='div__Button'>
-                                <input className='last-name-input' placeholder={this.state.lastName}
+                                <input value={this.state.lastName} className='last-name-input' placeholder="Last name"
                                        onChange={this.handleLastName}/>
                             </div>
 
                             <div className='div__Button'>
-                                <input className='email-input' placeholder={this.state.email}
+                                <input value={this.state.email} className='email-input' placeholder="Email address"
                                        onChange={this.handleEmail}/>
                             </div>
 
                             <div className='div__Button'>
-                                <input className='confirmEmail-input' placeholder={this.state.confirmEmail}
+                                <input value={this.state.confirmEmail} className='confirmEmail-input' placeholder="Confirm email address"
                                        onChange={this.handleConfirmEmail}/>
                             </div>
 
                             <div className='div__Button'>
-                                <input type="password" className='password-input' placeholder={this.state.password}
+                                <input value={this.state.password} type="password" className='password-input' placeholder="Password"
                                        onChange={this.handlePassword}/>
                             </div>
 
                             <div className='div__Button'>
-                                <input type="password" className='confirmPassword-input' placeholder={this.state.confirmPassword}
+                                <input value={this.state.confirmPassword} type="password" className='confirmPassword-input' placeholder="Confirm password"
                                        onChange={this.handleConfirmPassword}/>
                             </div>
 
@@ -339,7 +343,9 @@ class Register extends React.Component{
 
                             <br/>
 
-                            <button className='home-button-down' onClick={this.handleRegisterUser}>Let's go!</button>
+                            <button className='register-button' onClick={this.handleRegisterUser}>Let's go!</button>
+
+                    <img className='register-bottom-img' src={RegisterBottom} alt='register-bottom-img'/>
 
                             {/*<div onClick={this.checkValidation}>
                                 {this.state.validated ? <Action action={action}

@@ -4,6 +4,7 @@ const bigFiveLength = 5;
 const _ = require('lodash');
 
 let findAndUpdateUser = (request, object, updateValue) => {
+    console.log('finding user')
     return User.findOneAndUpdate({
         _id: request.user._id
     }, {
@@ -48,6 +49,7 @@ let constructObject = (request, emptyObject) => {
 
 
 let sendResponse = (response, status, message) => {
+    console.log('response sent')
     response.status(status).send(message);
 };
 module.exports = {

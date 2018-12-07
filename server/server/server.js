@@ -69,10 +69,10 @@ app.post('/email', (request, response) => {
 });
 
 app.get('/',(request,response)=> {
-	console.log('Home page');
+	console.log('Home page1');//dddd
     //response.send('index');
     //response.sendFile('../../public/index.html');
-    response.sendFile('index.html', {root: './server/server/pages/'});
+    response.sendFile('index.html', {root: '../../public'});
 });
 // let ip = '192.168.43.136';
 

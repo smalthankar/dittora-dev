@@ -152,9 +152,21 @@
   left: 700px;
   top: 373px;
 
-  /*border: 0px;
-  outline: 0px;*/
-  //border: 1px solid #D5D4D4;
+  background-color: white;
+  color: deeppink;
+  border: 1.5px solid deeppink;
+
+  border-radius: 4px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+
+  //color: #FFFFFF;
+}
+
+
+.birthday-input:hover {
+  background-color: deeppink;
+  color: white;
 }
 
 .birthday-date-picker {

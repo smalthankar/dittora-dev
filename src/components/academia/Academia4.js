@@ -68,13 +68,13 @@ class Academia4 extends React.Component{
         this.state = {
             id: this.props.match.params.id,
             typeOfStudent: 'type of student',
-            currentUniversity: 'university name',
+            currentUniversity: '',
             currentStatus: 'engagement type',
             typeOfDegree: 'type of degree',
-            programName: 'name of program',
+            programName: '',
             currentStatusTwo: 'engagement type',
             typeOfDegreeTwo: 'type of degree',
-            programNameTwo: 'name of program',
+            programNameTwo: '',
             startDate: moment(),
             endDate: moment(),
             selectedStartDate: '',
@@ -341,7 +341,7 @@ class Academia4 extends React.Component{
         /*header('Access-Control-Allow-Origin: *');
         header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
         header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');*/
-        //Axios.post('http://localhost:5000/data', {id: 'id here'})
+        //Axios.post('/data', {id: 'id here'})
 
 
         fetch('http://localhost:5000/academics', {  //http://192.168.0.133:3000/
@@ -399,11 +399,14 @@ class Academia4 extends React.Component{
 
                         <span className='academia4-text-1'>Today I'm an,</span>
 
-                        <input className='academia4-line-1' placeholder="Undergraduate" />
+                        <span className='academia4-line-1'>Undergraduate</span>
+
+                        {/*<input className='academia4-line-1' placeholder="Undergraduate" />*/}
 
                         <span className='academia4-text-2'>student at,</span>
 
-                        <input className='academia-university-name' placeholder={this.state.currentUniversity}
+                        <input value={this.state.currentUniversity} className='academia-university-name'
+                               placeholder="university name"
                                onChange={this.handleUniversity}/>
 
                         <span className='academia-text-3'>I'm currently</span>
@@ -469,16 +472,26 @@ class Academia4 extends React.Component{
                         </span>
 
 
-                        <input className='academia-program-name' placeholder={this.state.programName}
+                        <input value={this.state.programName} className='academia-program-name'
+                               placeholder="name of program"
                                onChange={this.handleProgramName}/>
 
                         <img className='academia-balloon' src={AcademiaBalloon} alt='academia-balloon' />
 
                         <img className='academia-arrow' src={AcademiaArrow} alt='academia-arrow' />
 
-                        <button className='academia-add-more-button' onClick={this.addMoreDiv}>
+                        {!this.state.doAddMore ?
+                            <button className='academia-add-more-button' onClick={this.addMoreDiv}>
+                                add more
+                            </button>:
+                            <button className='academia-add-more-button' onClick={this.addMoreDiv}>
+                                show less
+                            </button>
+                        }
+
+                        {/*<button className='academia-add-more-button' onClick={this.addMoreDiv}>
                             add more
-                        </button>
+                        </button>*/}
 
                         {this.state.doAddMore ?
                             <div>
@@ -545,8 +558,8 @@ class Academia4 extends React.Component{
                         </span>
 
 
-                                <input className='academia-program-name-two'
-                                       placeholder={this.state.programNameTwo}
+                                <input value={this.state.programNameTwo} className='academia-program-name-two'
+                                       placeholder="name of program"
                                        onChange={this.handleProgramNameTwo}/>
                         </div> : ''}
 
@@ -629,7 +642,7 @@ class Academia4 extends React.Component{
 
 
                         <span className='academia-slider-3-text'>
-                            How are your relationships with other people in your program?
+                            How stressed do you feel throughout the semester?
                         </span>
 
                         <span className='academia-slider-3-left'>I feel stressed all the time</span>

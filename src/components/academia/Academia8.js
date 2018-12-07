@@ -75,16 +75,16 @@ class Academia8 extends React.Component{
         this.state = {
             id: this.props.match.params.id,
             typeOfStudentPastGraduate: 'Graduate Studies',
-            universityPastUndergrad: 'university name',
-            universityPastGraduate: 'university name',
+            universityPastUndergrad: '',
+            universityPastGraduate: '',
             currentStatusPastGraduate: 'engagement type',
             typeOfDegreePastGraduate: 'type of degree',
-            programNamePastUndergrad: 'name of program',
-            programNamePastGraduate: 'name of program',
+            programNamePastUndergrad: '',
+            programNamePastGraduate: '',
             currentStatusTwoPastGraduate: 'engagement type',
             typeOfDegreeTwoPastGraduate: 'type of degree',
-            programNameTwoPastUndergrad: 'name of program',
-            universityTwoPastUndergrad: 'university name',
+            programNameTwoPastUndergrad: '',
+            universityTwoPastUndergrad: '',
             startDatePastGraduate: moment(),
             endDatePastGraduate: moment(),
             selectedStartDatePastGraduate: '',
@@ -385,7 +385,7 @@ class Academia8 extends React.Component{
         /*header('Access-Control-Allow-Origin: *');
         header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
         header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');*/
-        //Axios.post('http://localhost:5000/data', {id: 'id here'})
+        //Axios.post('/data', {id: 'id here'})
 
 
         fetch('http://localhost:5000/academics', {
@@ -443,18 +443,22 @@ class Academia8 extends React.Component{
 
                         <span className='academia-other-text-1'>I was doing my</span>
 
-                        <input className='academia-other-line-1' placeholder="graduate studies" />
+                        <span className='academia-other-line-1'>Graduate Studies</span>
+
+                        {/*<input className='academia-other-line-1' placeholder="graduate studies" />*/}
 
                         <span className='academia-other-text-2'>in</span>
 
-                        <input className='academia-other-graduate-program-name' placeholder={this.state.programNamePastGraduate}
+                        <input value={this.state.programNamePastGraduate} className='academia-other-graduate-program-name'
+                               placeholder="name of program"
                                onChange={this.handleProgramNameGraduate}/>
 
 
 
                         <span className='academia-other-text-3'>, at</span>
 
-                        <input className='academia-other-graduate-university-name' placeholder={this.state.universityPastGraduate}
+                        <input value={this.state.universityPastGraduate} className='academia-other-graduate-university-name'
+                               placeholder="university name"
                                onChange={this.handleUniversityGraduate}/>
 
                         <span className='academia-other-text-4'>When I was an undergraduate, I was </span>
@@ -521,13 +525,14 @@ class Academia8 extends React.Component{
                         </DropdownButton>
                         </span>
 
-                        <input className='academia-other-program-name' placeholder={this.state.programNamePastUndergrad}
+                        <input value={this.state.programNamePastUndergrad} className='academia-other-program-name'
+                               placeholder="name of program"
                                onChange={this.handleProgramName}/>
 
                         <span className='academia-other-text-6'>, at the</span>
 
-                        <input className='academia-other-university-name'
-                               placeholder={this.state.universityPastUndergrad}
+                        <input value={this.state.universityPastUndergrad} className='academia-other-university-name'
+                               placeholder="university name"
                                onChange={this.handleUniversity}/>
 
 
@@ -536,9 +541,18 @@ class Academia8 extends React.Component{
 
                         <img className='academia-other-arrow' src={AcademiaArrow} alt='academia-other-arrow' />
 
-                        <button className='academia-other-add-more-button' onClick={this.addMoreDiv}>
+                        {!this.state.doAddMore ?
+                            <button className='academia-other-add-more-button' onClick={this.addMoreDiv}>
+                                add more
+                            </button>:
+                            <button className='academia-other-add-more-button' onClick={this.addMoreDiv}>
+                                show less
+                            </button>
+                        }
+
+                        {/*<button className='academia-other-add-more-button' onClick={this.addMoreDiv}>
                             add more
-                        </button>
+                        </button>*/}
 
                         {this.state.doAddMore ?
                             <div>
@@ -606,14 +620,14 @@ class Academia8 extends React.Component{
                         </DropdownButton>
                         </span>
 
-                                <input className='academia-other-program-name-two'
-                                       placeholder={this.state.programNameTwoPastUndergrad}
+                                <input value={this.state.programNameTwoPastUndergrad} className='academia-other-program-name-two'
+                                       placeholder="name of program"
                                        onChange={this.handleProgramNameTwo}/>
 
                                 <span className='academia-other-text-6-two'>, at the</span>
 
-                                <input className='academia-other-university-name-two'
-                                       placeholder={this.state.universityTwoPastUndergrad}
+                                <input value={this.state.universityTwoPastUndergrad} className='academia-other-university-name-two'
+                                       placeholder="university name"
                                        onChange={this.handleUniversityTwo}/>
 
 

@@ -72,13 +72,13 @@ class Academia7 extends React.Component{
         this.state = {
             id: this.props.match.params.id,
             typeOfStudentPast: 'type of student',
-            universityPast: 'university name',
+            universityPast: '',
             statusPast: 'engagement type',
             typeOfDegreePast: 'type of degree',
-            programNamePast: 'name of program',
+            programNamePast: '',
             statusTwoPast: 'engagement type',
             typeOfDegreeTwoPast: 'type of degree',
-            programNameTwoPast: 'name of program',
+            programNameTwoPast: '',
             startDatePast: moment(),
             endDatePast: moment(),
             selectedStartDatePast: '',
@@ -346,7 +346,7 @@ class Academia7 extends React.Component{
         /*header('Access-Control-Allow-Origin: *');
         header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
         header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');*/
-        //Axios.post('http://localhost:5000/data', {id: 'id here'})
+        //Axios.post('/data', {id: 'id here'})
 
 
         fetch('http://localhost:5000/academics', {
@@ -408,7 +408,8 @@ class Academia7 extends React.Component{
 
                         <span className='academia4-text-2'>student at,</span>
 
-                        <input className='academia-university-name' placeholder={this.state.universityPast}
+                        <input value={this.state.universityPast} className='academia-university-name'
+                               placeholder="university name"
                                onChange={this.handleUniversity}/>
 
                         <span className='academia-text-3'>I was</span>
@@ -474,16 +475,26 @@ class Academia7 extends React.Component{
                         </span>
 
 
-                        <input className='academia-program-name' placeholder={this.state.programNamePast}
+                        <input value={this.state.programNamePast} className='academia-program-name'
+                               placeholder="name of program"
                                onChange={this.handleProgramName}/>
 
                         <img className='academia-balloon' src={AcademiaBalloon} alt='academia-balloon' />
 
                         <img className='academia-arrow' src={AcademiaArrow} alt='academia-arrow' />
 
-                        <button className='academia-add-more-button' onClick={this.addMoreDiv}>
+                        {!this.state.doAddMore ?
+                            <button className='academia-add-more-button' onClick={this.addMoreDiv}>
+                                add more
+                            </button>:
+                            <button className='academia-add-more-button' onClick={this.addMoreDiv}>
+                                show less
+                            </button>
+                        }
+
+                        {/*<button className='academia-add-more-button' onClick={this.addMoreDiv}>
                             add more
-                        </button>
+                        </button>*/}
 
                         {this.state.doAddMore ?
                             <div>
@@ -550,8 +561,8 @@ class Academia7 extends React.Component{
                         </span>
 
 
-                                <input className='academia-program-name-two'
-                                       placeholder={this.state.programNameTwoPast}
+                                <input value={this.state.programNameTwoPast} className='academia-program-name-two'
+                                       placeholder="name of program"
                                        onChange={this.handleProgramNameTwo}/>
                             </div> : ''}
 
