@@ -1,19 +1,16 @@
 import React from 'react';
 
-import Header from "../Header";
+
 import Action from "../Action";
 
-import {connect} from 'react-redux';
-import {addAcademia1, addName} from "../../actions/actions";
-//import state from "../../reducers-list";
+import connect from "react-redux/lib/connect/connect";
 
-import configureStore from '../../store/configureStore';
-//import { addName } from '../actions/actions';
+
 import { addAcademia6 } from '../../actions/actions';
 
 import DittoraRegularLogo from '../../images-logos/dittora-regular-logo/dittora-regular-logo.svg';
 import UniversityLogo from '../../images-logos/academia/academia1-university.svg';
-import {Link} from "react-router-dom";
+
 
 class Academia6 extends React.Component{
     constructor(props){

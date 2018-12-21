@@ -13,7 +13,7 @@ import React from 'react';
 import Header from "../Header";
 import Action from "../Action";
 
-import {connect} from 'react-redux';
+import connect from "react-redux/lib/connect/connect";
 import {addAcademia1, addName} from "../../actions/actions";
 //import state from "../../reducers-list";
 
@@ -23,7 +23,7 @@ import { addAcademia2 } from '../../actions/actions';
 
 import DittoraRegularLogo from '../../images-logos/dittora-regular-logo/dittora-regular-logo.svg';
 import UniversityLogo from '../../images-logos/academia/academia1-university.svg';
-import {Link} from "react-router-dom";
+import Link from "react-router-dom/Link";
 
 class TypeFormTest extends React.Component{
     constructor(props){

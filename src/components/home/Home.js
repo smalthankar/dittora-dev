@@ -1,40 +1,20 @@
 import React from 'react';
-import Header from "../Header";
-import Action from "../Action";
-
-import {Link, NavLink} from 'react-router-dom';
-
-import uuid from 'uuid';
 
 
-//import FormInput from "../FormInput";
-//import {Dropdown, MenuItem} from "semantic-ui-react";
-
-//import { DropdownMenu, MenuItem} from 'react-bootstrap-dropdown-menu';
-
-//import {ButtonToolbar} from 'reactstrap';
-
-import {connect} from 'react-redux';
-import {addBig5, addUser} from "../../actions/actions";
-//import {addName} from "../actions/actions";
+import Link from 'react-router-dom/Link';
+import NavLink from 'react-router-dom/NavLink';
 
 
+import connect from 'react-redux/lib/connect/connect';
 
-import DatePicker from 'react-datepicker';
-import moment from 'moment';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
-//import 'bootstrap/dist/js/bootstrap.min.js';
 
-import DatePickerClass from '../DatePickerClass';
 import 'react-bootstrap/dist/react-bootstrap.js';
 import 'react-bootstrap/dist/react-bootstrap.min.js';
 
-import {DropdownButton, Button, MenuItem,ButtonToolbar} from 'react-bootstrap';
-import Axios from 'axios';
 
-//import concordiaLogo from '../../images-logos/concordia.png';
 
 import DittoraHomeLogo from '../../images-logos/dittora-home-logo.svg';
 import BigBubble from '../../images-logos/big-bubble.svg';

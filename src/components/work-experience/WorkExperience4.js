@@ -6,7 +6,7 @@ import Action from "../Action";
 import {DropdownButton, Button, MenuItem,ButtonToolbar, FormControl, FormGroup, Radio, ToggleButton, ToggleButtonGroup}
     from 'react-bootstrap';
 import ReactSlider from 'react-slider';
-import {connect} from "react-redux";
+import connect from "react-redux/lib/connect/connect";
 import {addWorkExperience2, addWorkExperience4} from "../../actions/actions";
 
 

@@ -2,8 +2,8 @@ import React from 'react';
 
 import Header from "../Header";
 import Action from "../Action";
-import {connect} from "react-redux";
-import {Link} from "react-router-dom";
+import connect from "react-redux/lib/connect/connect";
+import Link from "react-router-dom/Link";
 
 import DittoraRegularLogo from '../../images-logos/dittora-regular-logo/dittora-regular-logo.svg';
 import HandShake from '../../images-logos/work/work-1-handshake.svg';

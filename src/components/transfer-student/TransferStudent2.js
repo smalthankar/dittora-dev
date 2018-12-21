@@ -5,12 +5,12 @@ import Action from "../Action";
 
 import {DropdownButton, Button, MenuItem,ButtonToolbar, FormControl, FormGroup, Radio, ToggleButton, ToggleButtonGroup}
 from 'react-bootstrap';
-import {connect} from "react-redux";
+import connect from "react-redux/lib/connect/connect";
 import {addTransferStudent1, addTransferStudent2} from "../../actions/actions";
 
 import DittoraRegularLogo from '../../images-logos/dittora-regular-logo/dittora-regular-logo.svg';
 import UniversityLogo from '../../images-logos/academia/academia1-university.svg';
-import {Link} from "react-router-dom";
+import Link from "react-router-dom/Link";
 
 
 class TransferStudent2 extends React.Component{

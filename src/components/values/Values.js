@@ -16,7 +16,7 @@ const update = require('immutability-helper');
 
 import AppList from './List';
 import {addAcademia3, addBig5, addValues} from "../../actions/actions";
-import {connect} from "react-redux";
+import connect from "react-redux/lib/connect/connect";
 
 import DittoraRegularLogo from '../../images-logos/dittora-regular-logo/dittora-regular-logo.svg';
 import IceCreamLogo from '../../images-logos/values/ice-cream-logo.svg';

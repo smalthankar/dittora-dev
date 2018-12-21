@@ -1,10 +1,8 @@
 import React from 'react';
 
-import Header from "../Header";
+
 import Action from "../Action";
 
-import {DropdownButton, Button, MenuItem,ButtonToolbar, FormControl, FormGroup, Radio, ToggleButton, ToggleButtonGroup}
-    from 'react-bootstrap';
 
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -13,8 +11,8 @@ import 'bootstrap/dist/js/bootstrap.js';
 import 'react-bootstrap/dist/react-bootstrap.js';
 import 'react-bootstrap/dist/react-bootstrap.min.js';
 import CheckboxButton from "../checkbox-button/CheckboxButton";
-import {addBig5, addFavSubs} from "../../actions/actions";
-import {connect} from "react-redux";
+import {addFavSubs} from "../../actions/actions";
+import connect from "react-redux/lib/connect/connect";
 
 import DittoraRegularLogo from '../../images-logos/dittora-regular-logo/dittora-regular-logo.svg';
 import PaperPlane from '../../images-logos/hobbies/paper-plane.svg';

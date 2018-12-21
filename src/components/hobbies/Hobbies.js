@@ -1,12 +1,10 @@
 import React from 'react';
 
-import Header from "../Header";
+
 import Action from "../Action";
 
-import {DropdownButton, Button, MenuItem,ButtonToolbar} from 'react-bootstrap';
-import {connect} from 'react-redux';
+import connect from "react-redux/lib/connect/connect";
 import {addHobbies} from "../../actions/actions";
-import {addAcademia3} from "../../actions/actions";
 
 import DittoraRegularLogo from '../../images-logos/dittora-regular-logo/dittora-regular-logo.svg';
 import PaperPlane from '../../images-logos/hobbies/paper-plane.svg';

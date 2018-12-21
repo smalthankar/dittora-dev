@@ -10,8 +10,8 @@ import WorkFactory1 from '../../images-logos/work/work-factory-1.svg';
 import WorkFactory2 from '../../images-logos/work/work-factory-2.svg';
 
 import {addWorkExperience1} from "../../actions/actions";
-import {connect} from "react-redux";
-import {Link} from "react-router-dom";
+import connect from "react-redux/lib/connect/connect";
+import Link from "react-router-dom/Link";
 
 
 class WorkExperience1 extends React.Component{

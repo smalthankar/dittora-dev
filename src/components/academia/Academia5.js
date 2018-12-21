@@ -22,7 +22,7 @@ import 'react-bootstrap/dist/react-bootstrap.min.js';
 
 import {DropdownButton, Button, MenuItem,ButtonToolbar} from 'react-bootstrap';
 import Axios from 'axios';
-import {connect} from "react-redux";
+import connect from "react-redux/lib/connect/connect";
 import {addAcademia5} from "../../actions/actions";
 
 import DittoraRegularLogo from '../../images-logos/dittora-regular-logo/dittora-regular-logo.svg';

@@ -1,38 +1,22 @@
 import React from 'react';
 import Header from "../Header";
-import Action from "../Action";
 
-import {Link, NavLink} from 'react-router-dom';
+import NavLink from 'react-router-dom/NavLink';
 
-import uuid from 'uuid';
+import connect from "react-redux/lib/connect/connect";
 
-
-//import FormInput from "../FormInput";
-//import {Dropdown, MenuItem} from "semantic-ui-react";
-
-//import { DropdownMenu, MenuItem} from 'react-bootstrap-dropdown-menu';
-
-//import {ButtonToolbar} from 'reactstrap';
-
-import {connect} from 'react-redux';
-//import {addAcademia3, addBig5, addUser} from "../../actions/actions";
-//import {addName} from "../actions/actions";
 
 import {addUser} from "../../actions/actions";
 
-import DatePicker from 'react-datepicker';
-import moment from 'moment';
+
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
-//import 'bootstrap/dist/js/bootstrap.min.js';
 
-import DatePickerClass from '../DatePickerClass';
 import 'react-bootstrap/dist/react-bootstrap.js';
 import 'react-bootstrap/dist/react-bootstrap.min.js';
 
-import {DropdownButton, Button, MenuItem,ButtonToolbar} from 'react-bootstrap';
-import Axios from 'axios';
+
 
 import LoginBottomImg from '../../images-logos/login/login-bottom-img.svg'
 

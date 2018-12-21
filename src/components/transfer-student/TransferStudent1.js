@@ -5,8 +5,8 @@ import Action from "../Action";
 
 import DittoraRegularLogo from '../../images-logos/dittora-regular-logo/dittora-regular-logo.svg';
 import UniversityLogo from '../../images-logos/academia/academia1-university.svg';
-import {Link} from "react-router-dom";
-import {connect} from "react-redux";
+import Link from "react-router-dom/Link";
+import connect from "react-redux/lib/connect/connect";
 import {addTransferStudent1} from "../../actions/actions";
 
 

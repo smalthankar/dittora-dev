@@ -1,38 +1,31 @@
 import React from 'react';
-import Header from "../Header";
+
 import Action from "../Action";
 
-import uuid from 'uuid';
 
 
-import FormInput from "../FormInput";
-//import {Dropdown, MenuItem} from "semantic-ui-react";
 
-//import { DropdownMenu, MenuItem} from 'react-bootstrap-dropdown-menu';
 
-//import {ButtonToolbar} from 'reactstrap';
 
-import {connect} from 'react-redux';
-import {addBig5, addUser} from "../../actions/actions";
+import connect from "react-redux/lib/connect/connect";
+
 import {addName} from "../../actions/actions";
 
 import DittoraRegularLogo from '../../images-logos/dittora-regular-logo/dittora-regular-logo.svg';
 import DudeWithBottle from '../../images-logos/about/dude-bottle.svg';
 
 
-import DatePicker from 'react-datepicker';
+
 import moment from 'moment';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
-//import 'bootstrap/dist/js/bootstrap.min.js';
 
-import DatePickerClass from '../DatePickerClass';
 import 'react-bootstrap/dist/react-bootstrap.js';
 import 'react-bootstrap/dist/react-bootstrap.min.js';
 
 import {DropdownButton, Button, MenuItem,ButtonToolbar} from 'react-bootstrap';
-import ReactDatePicker from 'react-date-picker-cs';
+
 
 import InfiniteCalendar from 'react-infinite-calendar';
 import "react-infinite-calendar/styles.css";
@@ -309,6 +302,7 @@ class About extends React.Component{
 
             <div>
                 {/*<Header title={title}/>*/}
+                <img className='dittora-regular-logo' src={DittoraRegularLogo} alt='dittora-regular-logo' />
                 <span className='about-header'> Welcome, <span style={{'color':'#DD417C'}}>{this.state.firstName}</span>!</span>
                 <div className='container'>
                     <p className='about-border-header'>

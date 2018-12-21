@@ -2,6 +2,8 @@
 const webpack = require('webpack');
 const path = require('path');
 
+//const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 module.exports = {
     entry: './src/app.js',
     output:{
@@ -57,7 +59,7 @@ module.exports = {
         ]
 
     },
-    devtool: 'cheap-module-eval-source-map',
+    //devtool: 'cheap-module-eval-source-map',
     devServer: {
         contentBase: path.join(__dirname, 'public'),
         historyApiFallback: true
@@ -67,6 +69,19 @@ module.exports = {
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery'
+        }),
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify('production')
+            }
         })
+        /*new ExtractTextPlugin('styles.css'),*/
+        /*new webpack.optimize.UglifyJsPlugin({
+            sourceMap: true
+        })*/
+
     ]
+
+
+
 };
